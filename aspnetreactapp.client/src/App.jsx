@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Home from "./components/home";
+import News from "./components/news";
 
 function App() {
     const [forecasts, setForecasts] = useState();
@@ -36,7 +40,18 @@ function App() {
             <h1 id="tabelLabel">Weather forecast</h1>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
+            <Router>
+                <Navbar />
+                <main className="main-content">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/news" element={<News />} />
+                        {/* Define other routes that you need*/}
+                    </Routes>
+                </main>
+            </Router>
         </div>
+
     );
     
     async function populateWeatherData() {
