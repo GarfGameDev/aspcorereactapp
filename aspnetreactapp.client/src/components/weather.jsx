@@ -15,10 +15,74 @@ export default function Basic() {
     const [forecasts, setForecasts] = useState();
 
     function ImageToShow({ summary }) {
-        if (summary === 'Sweltering') {
+        if (summary === 'Thunderstorm') {
             return (
                 <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
+                    src="../src/assets/thunderstorm.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Sunny') {
+            return (
+                <img
+                    src="../src/assets/sunny.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Freezing') {
+            return (
+                <img
+                    src="../src/assets/freezing.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Cloudy Sunny Showers') {
+            return (
+                <img
+                    src="../src/assets/cloudysunnyshowers.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Windy') {
+            return (
+                <img
+                    src="../src/assets/windy.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Heavy Rain') {
+            return (
+                <img
+                    src="../src/assets/heavyrain.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Cloudy') {
+            return (
+                <img
+                    src="../src/assets/cloudy.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Cloudy Sunshine') {
+            return (
+                <img
+                    src="../src/assets/cloudysunshine.png"
+                    width="100px"
+                />
+            )
+        }
+        if (summary === 'Light Rain') {
+            return (
+                <img
+                    src="../src/assets/lightrain.png"
                     width="100px"
                 />
             )
@@ -41,8 +105,8 @@ export default function Basic() {
                                 <div className="d-flex">
                                     <MDBTypography tag="h6" className="flex-grow-1">
                                         {forecast.date}
-                                    </MDBTypography>
-                                    <MDBTypography tag="h6">15:07</MDBTypography>
+                                        </MDBTypography>
+                                        <MDBTypography tag="h6">{forecast.time}</MDBTypography>
                                 </div>
 
                                 <div className="d-flex flex-column text-center mt-5 mb-4">
