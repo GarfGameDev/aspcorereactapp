@@ -6,3 +6,5 @@ I've also been using this project as an example on creating seperate branches an
 One thing that's been implemented now is the weather forecast page that used the randomised data from the api call to the backend and displays it dynamically in customised weather widgets. 
 
 [![Image from Gyazo](https://i.gyazo.com/319099a661cdd0cd22525712de227ba5.png)](https://gyazo.com/319099a661cdd0cd22525712de227ba5)
+
+The next step for this would be to add some conditional logic that prevents a windy summary from showing if the wind speed is below a certain threshold since currently the data being displayed is just being randomised between a set number range with no correlation between them.
