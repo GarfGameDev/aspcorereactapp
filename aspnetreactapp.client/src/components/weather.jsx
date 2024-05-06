@@ -1,17 +1,29 @@
 import React from "react";
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWind, faTint, faSun } from '@fortawesome/free-solid-svg-icons';
 import {
     MDBCard,
     MDBCardBody,
     MDBCol,
     MDBContainer,
-    MDBIcon,
     MDBRow,
     MDBTypography,
 } from "mdb-react-ui-kit";
 
 export default function Basic() {
     const [forecasts, setForecasts] = useState();
+
+    function ImageToShow({ summary }) {
+        if (summary === 'Sweltering') {
+            return (
+                <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
+                    width="100px"
+                />
+            )
+        }
+    }
 
     useEffect(() => {
         populateWeatherData();
@@ -40,7 +52,7 @@ export default function Basic() {
                                         style={{ color: "#1C2331" }}
                                     >
                                             {" "}
-                                            {forecast.temperatureC}{" "}
+                                            {forecast.temperatureC}{'\u00b0'}C{" "}
                                     </MDBTypography>
                                         <span className="small" style={{ color: "#868B94" }}>
                                             {forecast.summary}
@@ -49,36 +61,33 @@ export default function Basic() {
 
                                 <div className="d-flex align-items-center">
                                     <div className="flex-grow-1" style={{ fontSize: '1rem' }}>
-                                        <div>
-                                            <MDBIcon
-                                                fas
-                                                icon="wind fa-fw"
+                                            <div>
+                                                <FontAwesomeIcon
+                                                icon={faWind}
                                                 style={{ color: "#868B94" }}
                                             />{" "}
                                             <span className="ms-1"> 40 km/h</span>
                                         </div>
-                                        <div>
-                                            <MDBIcon
-                                                fas
-                                                icon="tint fa-fw"
+                                            <div>
+                                                <FontAwesomeIcon
+                                                icon={faTint}
                                                 style={{ color: "#868B94" }}
                                             />{" "}
                                             <span className="ms-1"> 84% </span>
                                         </div>
-                                        <div>
-                                            <MDBIcon
-                                                fas
-                                                icon="sun fa-fw"
-                                                style={{ color: "#868B94" }}
+                                            <div>
+                                                <FontAwesomeIcon
+                                                    icon={faSun}
+                                                    style={{ color: "#868B94" }}
                                             />{" "}
                                             <span className="ms-1"> 0.2h </span>
                                         </div>
                                     </div>
-                                    <div>
-                                        <img
-                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
-                                            width="100px"
-                                        />
+                                        <div>
+                                            <ImageToShow
+                                                summary={forecast.summary}
+                                            />
+
                                     </div>
                                 </div>
                             </MDBCardBody>
