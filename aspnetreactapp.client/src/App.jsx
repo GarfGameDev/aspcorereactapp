@@ -36,10 +36,13 @@ function App() {
         </table>;
 
     return (
+
         <div>
+
             <h1 id="tabelLabel">Weather forecast</h1>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
+            <header>
             <Router>
                 <Navbar />
                 <main className="main-content">
@@ -49,7 +52,8 @@ function App() {
                         {/* Define other routes that you need*/}
                     </Routes>
                 </main>
-            </Router>
+                </Router>
+            </header>
         </div>
 
     );
