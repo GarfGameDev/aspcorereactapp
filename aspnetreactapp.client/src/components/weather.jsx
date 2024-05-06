@@ -129,22 +129,22 @@ export default function Basic() {
                                                 <FontAwesomeIcon
                                                 icon={faWind}
                                                 style={{ color: "#868B94" }}
-                                            />{" "}
-                                            <span className="ms-1"> 40 km/h</span>
+                                                />{" "}
+                                                <span className="ms-1"> {forecast.windSpeed} km/h</span>
                                         </div>
                                             <div>
                                                 <FontAwesomeIcon
                                                 icon={faTint}
                                                 style={{ color: "#868B94" }}
-                                            />{" "}
-                                            <span className="ms-1"> 84% </span>
+                                                />{" "}
+                                                <span className="ms-1"> {forecast.humidity}% </span>
                                         </div>
                                             <div>
                                                 <FontAwesomeIcon
                                                     icon={faSun}
                                                     style={{ color: "#868B94" }}
                                             />{" "}
-                                            <span className="ms-1"> 0.2h </span>
+                                            <span className="ms-1"> {forecast.humidityMultiplier}h </span>
                                         </div>
                                     </div>
                                         <div>
