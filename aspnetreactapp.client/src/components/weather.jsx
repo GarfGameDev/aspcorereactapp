@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from 'react';
 import {
     MDBCard,
     MDBCardBody,
@@ -10,16 +11,24 @@ import {
 } from "mdb-react-ui-kit";
 
 export default function Basic() {
+    const [forecasts, setForecasts] = useState();
+
+    useEffect(() => {
+        populateWeatherData();
+    }, []);
+
     return (
+
         <section className="vh-100" style={{ backgroundColor: "#4B515D" }}>
             <MDBContainer className="h-100">
                 <MDBRow className="justify-content-center align-items-center h-100 w-100">
-                    <MDBCol md="8" lg="6" xl="4">
+                    {(forecasts || []).map(forecast =>
+                        <MDBCol md="8" lg="6" xl="4" key={forecast.date} >
                         <MDBCard style={{ color: "#4B515D", borderRadius: "35px" }}>
                             <MDBCardBody className="p-4">
                                 <div className="d-flex">
                                     <MDBTypography tag="h6" className="flex-grow-1">
-                                        Warsaw
+                                        {forecast.date}
                                     </MDBTypography>
                                     <MDBTypography tag="h6">15:07</MDBTypography>
                                 </div>
@@ -30,11 +39,11 @@ export default function Basic() {
                                         className="display-4 mb-0 font-weight-bold"
                                         style={{ color: "#1C2331" }}
                                     >
-                                        {" "}
-                                        13ÅãC{" "}
+                                            {" "}
+                                            {forecast.temperatureC}{" "}
                                     </MDBTypography>
-                                    <span className="small" style={{ color: "#868B94" }}>
-                                        Stormy
+                                        <span className="small" style={{ color: "#868B94" }}>
+                                            {forecast.summary}
                                     </span>
                                 </div>
 
@@ -74,9 +83,16 @@ export default function Basic() {
                                 </div>
                             </MDBCardBody>
                         </MDBCard>
-                    </MDBCol>
+                        </MDBCol>
+                    )}
                 </MDBRow>
             </MDBContainer>
         </section>
     );
+
+    async function populateWeatherData() {
+        const response = await fetch('weatherforecast');
+        const data = await response.json();
+        setForecasts(data);
+    }
 }
