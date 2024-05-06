@@ -13,6 +13,7 @@ const Navbars = () => {
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="news">News</Nav.Link>
+                        <Nav.Link href="weather">Weather</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
