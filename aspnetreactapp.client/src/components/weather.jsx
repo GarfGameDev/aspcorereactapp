@@ -15,77 +15,70 @@ export default function Basic() {
     const [forecasts, setForecasts] = useState();
 
     function ImageToShow({ summary }) {
-        if (summary === 'Thunderstorm') {
-            return (
-                <img
-                    src="../src/assets/thunderstorm.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Sunny') {
-            return (
-                <img
-                    src="../src/assets/sunny.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Freezing') {
-            return (
-                <img
-                    src="../src/assets/freezing.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Cloudy Sunny Showers') {
-            return (
-                <img
-                    src="../src/assets/cloudysunnyshowers.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Windy') {
-            return (
-                <img
-                    src="../src/assets/windy.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Heavy Rain') {
-            return (
-                <img
-                    src="../src/assets/heavyrain.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Cloudy') {
-            return (
-                <img
-                    src="../src/assets/cloudy.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Cloudy Sunshine') {
-            return (
-                <img
-                    src="../src/assets/cloudysunshine.png"
-                    width="100px"
-                />
-            )
-        }
-        if (summary === 'Light Rain') {
-            return (
-                <img
-                    src="../src/assets/lightrain.png"
-                    width="100px"
-                />
-            )
+        switch (summary) {
+            case 'Thunderstorm':
+                return (
+                    <img
+                        src="../src/assets/thunderstorm.png"
+                        width="100px"
+                    />
+                ) 
+            case 'Sunny':
+                return (
+                    <img
+                        src="../src/assets/sunny.png"
+                        width="100px"
+                    />
+                )
+            case 'Freezing':
+                return (
+                    <img
+                        src="../src/assets/freezing.png"
+                        width="100px"
+                    />
+                ) 
+            case 'Cloudy Sunny Showers':
+                return (
+                    <img
+                        src="../src/assets/cloudysunnyshowers.png"
+                        width="100px"
+                    />
+                )
+            case 'Windy':
+                return (
+                    <img
+                        src="../src/assets/windy.png"
+                        width="100px"
+                    />
+                ) 
+            case 'Heavy Rain':
+                return (
+                    <img
+                        src="../src/assets/heavyrain.png"
+                        width="100px"
+                    />
+                )
+            case 'Cloudy':
+                return (
+                    <img
+                        src="../src/assets/cloudy.png"
+                        width="100px"
+                    />
+                ) 
+            case 'Cloudy Sunshine':
+                return (
+                    <img
+                        src="../src/assets/cloudysunshine.png"
+                        width="100px"
+                    />
+                )
+            case 'Light Rain':
+                return (
+                    <img
+                        src="../src/assets/lightrain.png"
+                        width="100px"
+                    />
+                )
         }
     }
 
